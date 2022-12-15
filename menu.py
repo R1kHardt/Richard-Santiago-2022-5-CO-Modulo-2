@@ -1,5 +1,6 @@
 import pygame
 
+
 from dino_runner.utils.constants import FONT_STYLE, SCREEN_HEIGHT, SCREEN_WIDTH
 
 class Menu:
@@ -34,4 +35,4 @@ class Menu:
        self.text = self.font.render(message, True,(0, 0, 0))
        self.text_rect = self.text.get_rect()
        self.text_rect.center = (self.half_screen_width, self.half_screen_height)
-       from dino_runner.components.game import Game
+      

@@ -83,7 +83,14 @@ class Game:
         if self.death_count == 0:
             self.menu.draw(self.screen)
         else:
-            self.menu.update_message('new message')
+            self.menu.update_message('Game over. Press any key to start\nScore:  ' + str(self.score) + ' Deaths: ' + str(self.death_count))
+            
+           
+            # self.menu.update_message('deaths ' + str(self.death_count))
+            #self.death_count > 0   
+            #self.menu.update_message('Deaths'+ str(self.death_count), True (0, 0, 0))
+            #self.menu.update_message('Score' + str(self.score), True (0, 0, 0))
+
             self.menu.draw(self.screen)
            
         self.screen.blit(ICON, (half_screen_width - 50, half_screen_height - 140))
@@ -96,6 +103,7 @@ class Game:
 
         if self.score % 100 == 0 and self.game_speed < 500:
             self.game_speed += 5
+            
 
     def draw_score(self):
         font = pygame.font.Font(FONT_STYLE, 30)
@@ -103,3 +111,4 @@ class Game:
         text_rect = text.get_rect()
         text_rect.center = (1000, 50)
         self.screen.blit(text, text_rect)
+       
